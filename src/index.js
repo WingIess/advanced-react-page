@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';

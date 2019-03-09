@@ -11,3 +11,22 @@
     grid-column-gap: var(--gutter);
     grid-template-rows: min-content;
 }
+
+@mixin generalBorder($size: 2, $side: '') {
+    $side-border: $side;
+    @if $side != '' {
+        $side-border: '-#{$side}';
+    }
+    
+    border#{$side-border}: #{$size}px solid $light-blue-2;
+}
+
+@mixin shadow {
+    box-shadow: 0 5px 20px rgba(black, .1);
+}
+
+@mixin customFont($code) {
+    content: icon($code);
+    font-family: 'Font Awesome\ 5 Free';
+    font-weight: 900;
+}

@@ -1,14 +1,17 @@
 import React from 'react';
 
-const Modal = () => {
-    return (
+import { connect } from 'react-redux';
+import { modalState, modalOpen } from '../store/actions/layout';
+
+const Modal = props => {
+    return ( props.modalState ?
         <div className="modal-wrapper">
-            <div className="backdrop"></div>
+            <div onClick={props.modal} className="backdrop"  />
             <div className="modal">
-                modal
+                <div onClick={props.modal} className="close fas fa-times"></div>
             </div>
-        </div>
+        </div> :null
     );
 };
 
-export default Modal;
+export default connect(modalState,modalOpen)(Modal);

@@ -1,6 +1,6 @@
 const initialState = {
     value: 0,
-    modul: false
+    modal: false
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -13,7 +13,7 @@ const rootReducer = (state = initialState, action) => {
         case 'MODAL':
             return {
                 ...state,
-                modul: action.modul
+                modal: !state.modal
             };
         default:
             return state;

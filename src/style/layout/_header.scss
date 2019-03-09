@@ -1,13 +1,34 @@
 .header {
     width: 100%;
     @include fullGrid;
-    
+    @include generalBorder(2, bottom);
+    @include shadow;
+    background-color: $light-blue-1;
+
     .navigation {
         display: flex;
         height: 6rem;
         grid-column: 2 / -2;
         align-items: flex-end;
         justify-content: flex-end;
+
+        .open-modal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 6rem;
+            background-color: $light-blue-2;
+            margin-right: auto;
+            cursor: pointer;
+
+            &::after {
+                display: block;
+                @include customFont(f658);
+                color: white;
+                font-size: 2rem;
+            }
+        }
 
         &__list {
             display: flex;
@@ -17,17 +38,54 @@
         &__item {
             list-style: none;
             height: 100%;
-            
+
             a {
                 height: 100%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin-left: 2rem;
-                padding: 0 2rem;
+                padding: 0 4rem;
+                transition: 0.3s;
+                position: relative;
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    border-left: 3px solid $dark-blue;
+                    border-right: 3px solid $dark-blue;
+                    transform: scaleY(0);
+                    transition: 0.2s ease-out;
+                }
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    border-bottom: 3px solid $dark-blue;
+                    border-top: 3px solid $dark-blue;
+                    transform: scaleX(0);
+                    transition: 0.2s ease-out;
+                }
 
                 &.active {
-                    background-color: #d8d8d8;
+                    background-color: $light-blue-2;
+
+                    &::after {
+                        transform: scaleY(1);
+                    }
+
+                    &::before {
+                        transform: scaleY(1);
+                    }
                 }
             }
         }

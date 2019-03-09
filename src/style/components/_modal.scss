@@ -1,0 +1,41 @@
+.modal-wrapper {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    grid-row: 1 / -1;
+    @include fullGrid;
+    z-index: 100;
+    
+    .backdrop {
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: rgba(black, 0.7);
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+    }
+
+    .modal {
+        border-radius: .6rem;
+        margin-top: 15.6rem;
+        grid-row: 1 / 2;
+        grid-column: 2 / 13;
+        min-height: 50rem;
+        width: 100%;
+        background-color: white;
+        position: relative;
+
+        .close {
+            padding: 1rem 2rem;
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 2.5rem;
+            cursor: pointer;
+            color: $soft-black;
+        }
+    }
+}

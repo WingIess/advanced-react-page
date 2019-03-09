@@ -1,9 +1,20 @@
-const initialState = {};
+const initialState = {
+    value: 0,
+    modul: false
+};
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'INC':
-            return action.value;
+            return {
+                ...state,
+                value: action.value
+            };
+        case 'MODAL':
+            return {
+                ...state,
+                modul: action.modul
+            };
         default:
             return state;
     }

@@ -1,9 +1,19 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const Header = () => {
+const Header = props => {
     return (
         <header>
-            <nav>Random text</nav>
+            <nav>
+                <ul>
+                    <li>
+                        <NavLink exact to="/">Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink exact to="/counter">Counter</NavLink>
+                    </li>
+                </ul>
+            </nav>
         </header>
     );
 };

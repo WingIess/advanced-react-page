@@ -1,0 +1,13 @@
+@mixin fullGrid {
+    display: grid;
+    grid-template-columns: 1fr repeat(12,minmax(0, var(--col-max-width))) 1fr;
+    grid-template-rows: min-content;
+    grid-column-gap: var(--gutter);
+}
+
+@mixin gridColumns($columns: 12) {
+    display: grid;
+    grid-template-columns: repeat($columns,minmax(0, var(--col-max-width)));
+    grid-column-gap: var(--gutter);
+    grid-template-rows: min-content;
+}

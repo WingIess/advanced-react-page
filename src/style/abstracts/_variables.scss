@@ -1,0 +1,7 @@
+:root {
+    --gutter: 2rem;
+    --max-width: 120rem;
+    --col-max-width: calc((var(--max-width) / 12) - var(--gutter));
+}
+
+// 

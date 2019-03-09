@@ -3,13 +3,13 @@ import { NavLink } from 'react-router-dom';
 
 const Header = props => {
     return (
-        <header>
-            <nav>
-                <ul>
-                    <li>
+        <header className="header">
+            <nav className="navigation">
+                <ul className="navigation__list">
+                    <li className="navigation__item">
                         <NavLink exact to="/">Home</NavLink>
                     </li>
-                    <li>
+                    <li className="navigation__item">
                         <NavLink exact to="/counter">Counter</NavLink>
                     </li>
                 </ul>

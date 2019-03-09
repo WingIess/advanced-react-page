@@ -1,4 +1,4 @@
-import React, { Component, lazy, Suspense, Fragment } from 'react';
+import React, { Component, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Home from './containers/Home';
@@ -10,7 +10,7 @@ class App extends Component {
         return (
             <div className="App">
                 <Router>
-                    <Fragment>
+                    <div className="main">
                         <Layout />
                         <Switch>
                             <Route path={'/'} exact render={() => <Home />} />
@@ -24,7 +24,7 @@ class App extends Component {
                                 )}
                             />
                         </Switch>
-                    </Fragment>
+                    </div>
                 </Router>
             </div>
         );

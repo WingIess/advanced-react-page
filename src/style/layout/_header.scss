@@ -1,0 +1,35 @@
+.header {
+    width: 100%;
+    @include fullGrid;
+    
+    .navigation {
+        display: flex;
+        height: 6rem;
+        grid-column: 2 / -2;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        &__list {
+            display: flex;
+            height: 100%;
+        }
+
+        &__item {
+            list-style: none;
+            height: 100%;
+            
+            a {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: 2rem;
+                padding: 0 2rem;
+
+                &.active {
+                    background-color: #d8d8d8;
+                }
+            }
+        }
+    }
+}
